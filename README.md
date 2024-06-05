@@ -4,8 +4,8 @@ A simple web application that generates recipes based on the ingredients you hav
 
 ### Features
 - Enter available ingredients to generate recipes
-- Select recipe difficulty (Easy, Medium, Hard) (Next feature)
-- Detailed nutrition facts for each recipe (Next feature)
+- Select recipe difficulty (Easy, Medium, Hard) *(Next feature)*
+- Detailed nutrition facts for each recipe *(Next feature)*
 
 ### Technologies
 - Node.js
