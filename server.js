@@ -16,13 +16,15 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 app.post('/generate-recipe', async (req, res) => {
-  const ingredients = req.body.ingredients;
+  const { ingredients, difficulty } = req.body;
 
   try {
+    const prompt = `Create a ${difficulty} recipe using the following ingredients: ${ingredients}. Include preparation time, cooking time, and cooking methods.`;
+
     const response = await openai.createCompletion({
       model: 'text-davinci-003',
-      prompt: `Create a recipe using the following ingredients: ${ingredients}`,
-      max_tokens: 150,
+      prompt,
+      max_tokens: 200,
     });
 
     res.json({ recipe: response.data.choices[0].text.trim() });
